@@ -1,27 +1,28 @@
 <?php
 
-use App\Http\Controllers\Auth\OAuth\GithubController;
+use App\Http\Controllers\Web\Auth\OAuth\GithubController;
+use App\Http\Controllers\Web\Auth\OAuth\GoogleController;
 use Illuminate\Support\Facades\Route;
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider and all of them will
-| be assigned to the "web" middleware group. Make something great!
-|
-*/
+Route::prefix('auth')->name('auth.')->group(function () {
 
-Route::prefix('auth')->group(function () {
-
-    Route::prefix('github')->controller(GithubController::class)->group(function () {
-        Route::get('/redirect', 'redirect');
+    Route::prefix('github')->name('github.')->controller(GithubController::class)->group(function () {
+        Route::get('/redirect', 'redirect')->name('redirect');
         Route::get('/callback', 'callback');
+
+        Route::get('/dashboard', 'dashboard')->name('dashboard');
+        Route::get('/logout', 'logout')->name('logout');
+    });
+
+    Route::prefix('google')->name('google.')->controller(GoogleController::class)->group(function () {
+        Route::get('/redirect', 'redirect')->name('redirect');
+        Route::get('/callback', 'callback');
+
+        Route::get('/dashboard', 'dashboard')->name('dashboard');
+        Route::get('/logout', 'logout')->name('logout');
     });
 });
 
 Route::get('/', function () {
     return view('welcome');
-});
+})->name('welcome');
