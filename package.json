@@ -3,7 +3,9 @@
     "type": "module",
     "scripts": {
         "dev": "vite",
-        "build": "vite build"
+        "build": "vite build",
+        "github": "git add . && git commit -m 'wip' && git push",
+        "deploy": "flyctl launch"
     },
     "devDependencies": {
         "autoprefixer": "^10.4.16",
