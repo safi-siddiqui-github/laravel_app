@@ -1,9 +1,9 @@
-# fly.toml app configuration file generated for laravel-camp on 2024-01-21T20:57:52+05:00
+# fly.toml app configuration file generated for laracamp on 2024-01-21T21:11:00+05:00
 #
 # See https://fly.io/docs/reference/configuration/ for information about how to use this file.
 #
 
-app = "laravel-camp"
+app = "laracamp"
 primary_region = "sin"
 console_command = "php /var/www/html/artisan tinker"
 
