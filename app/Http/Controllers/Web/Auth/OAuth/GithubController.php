@@ -19,21 +19,21 @@ class GithubController extends Controller
     {
         $social_user = Socialite::driver('github')->user();
 
-        $user = User::where('github_id', $social_user->id)->first() ?? new User();
+        // $user = User::where('github_id', $social_user->id)->first() ?? new User();
 
-        $user->github_id = $social_user->id;
-        $user->email = $social_user->email;
-        $user->name = $social_user->name;
-        $user->nickname = $social_user->nickname;
-        $user->avatar = $social_user->avatar;
-        $user->github_token = $social_user->token;
-        $user->github_refresh_token = $social_user->refreshToken;
-        $user->github_expires_in = $social_user->expiresIn;
-        $user->github_token_secret = $social_user->tokenSecret;
+        // $user->github_id = $social_user->id;
+        // $user->email = $social_user->email;
+        // $user->name = $social_user->name;
+        // $user->nickname = $social_user->nickname;
+        // $user->avatar = $social_user->avatar;
+        // $user->github_token = $social_user->token;
+        // $user->github_refresh_token = $social_user->refreshToken;
+        // $user->github_expires_in = $social_user->expiresIn;
+        // $user->github_token_secret = $social_user->tokenSecret;
 
-        $user->save();
+        // $user->save();
 
-        Auth::login($user);
+        Auth::login($social_user);
 
         return to_route('auth.github.dashboard');
     }
