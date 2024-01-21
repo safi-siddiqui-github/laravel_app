@@ -33,20 +33,20 @@ class GithubController extends Controller
 
         // $user->save();
 
-        Auth::login($social_user);
+        // Auth::login($social_user);
 
         return to_route('auth.github.dashboard');
     }
 
     public function dashboard(Request $request)
     {
-        $user = $request->user();
+        // $user = $request->user();
         return view('github.dashboard');
     }
 
     public function logout(Request $request)
     {
-        Auth::logout();
+        // Auth::logout();
         $request->session()->invalidate();
         $request->session()->regenerateToken();
         return to_route('welcome');

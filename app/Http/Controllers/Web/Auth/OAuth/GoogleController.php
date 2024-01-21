@@ -33,19 +33,20 @@ class GoogleController extends Controller
 
         // $user->save();
 
-        Auth::login($social_user);
+        // Auth::login($social_user);
 
         return to_route('auth.google.dashboard');
     }
 
     public function dashboard()
     {
+        // $user = $request->user();
         return view('google.dashboard');
     }
 
     public function logout(Request $request)
     {
-        Auth::logout();
+        // Auth::logout();
         $request->session()->invalidate();
         $request->session()->regenerateToken();
         return to_route('welcome');
