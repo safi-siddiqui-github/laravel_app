@@ -19,19 +19,19 @@ class GoogleController extends Controller
     {
         $social_user = Socialite::driver('google')->user();
 
-        $user = User::where('google_id', $social_user->id)->first() ?? new User();
-        $user->google_id = $social_user->id;
-        $user->email = $social_user->email;
-        $user->name = $social_user->name;
-        $user->nickname = $social_user->nickname;
-        $user->avatar = $social_user->avatar;
-        $user->google_token = $social_user->token;
-        $user->google_refresh_token = $social_user->refreshToken;
-        $user->google_expires_in = $social_user->expiresIn;
-        $user->google_token_secret = $social_user->tokenSecret;
-        $user->save();
+        // $user = User::where('google_id', $social_user->id)->first() ?? new User();
+        // $user->google_id = $social_user->id;
+        // $user->email = $social_user->email;
+        // $user->name = $social_user->name;
+        // $user->nickname = $social_user->nickname;
+        // $user->avatar = $social_user->avatar;
+        // $user->google_token = $social_user->token;
+        // $user->google_refresh_token = $social_user->refreshToken;
+        // $user->google_expires_in = $social_user->expiresIn;
+        // $user->google_token_secret = $social_user->tokenSecret;
+        // $user->save();
 
-        Auth::login($user);
+        // Auth::login($user);
 
         return to_route('web.home');
     }
