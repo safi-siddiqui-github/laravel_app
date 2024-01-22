@@ -56,10 +56,13 @@
                 </div>
             </div>
 
-            <p class="tracking-tight text-sm text-center">
-                Dont have an account?
-                <span class="font-medium">Sign Up</span>
-            </p>
+            <div class="flex flex-col">
+                <p class="tracking-tight text-sm text-center">
+                    Dont have an account?
+                    <span class="font-medium">Sign Up</span>
+                    <a href="{{route('web.home')}}" class="font-medium">| Home</a>
+                </p>
+            </div>
         </div>
     </div>
 </div>
