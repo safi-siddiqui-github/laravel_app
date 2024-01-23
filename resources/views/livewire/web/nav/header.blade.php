@@ -11,8 +11,12 @@
         </nav>
 
         <nav class="flex gap-4">
+            @guest
             <a href="{{route('auth.web.login')}}">Login</a>
+            @endguest
+            @auth
             <a href="{{route('auth.web.logout')}}">Logout</a>
+            @endauth
         </nav>
     </header>
 </div>
