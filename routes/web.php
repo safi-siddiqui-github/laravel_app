@@ -24,8 +24,8 @@ Route::prefix('auth')->name('auth.')->group(function () {
     });
 });
 
-Route::prefix('web')->name('web.')->controller(WebAuthController::class)->group(function () {
-    Route::get('/home', 'home')->name('home');
+Route::name('web.')->controller(WebAuthController::class)->group(function () {
+    Route::get('/', 'home')->name('home');
 });
 
 Route::fallback(function () {

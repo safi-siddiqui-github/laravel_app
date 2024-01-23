@@ -4,10 +4,10 @@ namespace App\Livewire\Web\Nav;
 
 use Livewire\Component;
 
-class Header extends Component
+class HeaderV1 extends Component
 {
     public function render()
     {
-        return view('livewire.web.nav.header');
+        return view('livewire.web.nav.header-v1');
     }
 }

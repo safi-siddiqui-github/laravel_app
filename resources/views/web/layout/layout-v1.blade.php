@@ -11,7 +11,7 @@
 
 <body class="antialiased">
 
-    <livewire:web.nav.header />
+    <livewire:web.nav.header-v1 />
     
     @yield('content')
 
