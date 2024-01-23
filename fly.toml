@@ -20,6 +20,16 @@ console_command = "php /var/www/html/artisan tinker"
   SESSION_DRIVER = "cookie"
   SESSION_SECURE_COOKIE = "true"
 
+  APP_URL = "https://laracamp.fly.dev"
+  
+  DB_CONNECTION = "pgsql"
+  DB_HOST = "laracamp-postgresql.internal"
+  DB_DATABASE= "laravel_laracamp" 
+  DB_PORT = 5432
+  
+  GITHUB_CALLBACK_URL="https://laracamp.fly.dev/auth/github/callback"
+  GOOGLE_CALLBACK_URL="https://laracamp.fly.dev/auth/google/callback"
+
 [http_service]
   internal_port = 8080
   force_https = true
