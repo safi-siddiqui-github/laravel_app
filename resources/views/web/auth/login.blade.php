@@ -1,17 +1,17 @@
 @extends('web.layout.layout-v2')
 @section('content')
-<div class="flex flex-col lg:bg-black lg:p-10 bg-cover bg-no-repeat lg:h-screen lg:items-center overflow-auto" style="{{'background-image: url('.asset('storage/login/luke-3d.jpg').')'}}">
+<div class="flex flex-col lg:bg-black lg:p-5 xl:p-10 bg-cover bg-no-repeat xl:h-screen lg:items-center overflow-auto" style="{{'background-image: url('.asset('storage/login/luke-3d.jpg').')'}}">
 
-    <div class="flex flex-col lg:flex-row sm:items-center lg:justify-center lg:p-1 lg:rounded-2xl bg-white lg:gap-5 xl:h-full oberflow-hidden">
+    <div class="flex flex-col lg:flex-row sm:items-center lg:justify-center lg:p-1 lg:rounded-2xl bg-white lg:gap-5 xl:h-full overflow-hidden">
         <img src="{{asset('storage/login/luke-3d.jpg')}}" alt="Login Side" class="hidden lg:h-[700px] xl:h-full object-cover lg:w-1/2 xl:w-2/3 rounded-2xl lg:block">
 
-        <div class="flex flex-col px-5 py-10 gap-10 bg-white max-w-[640px] min-w-80 sm:min-w-[640px] lg:w-1/2 xl:w-1/3 lg:justify-between lg:min-w-[500px]">
+        <div class="flex flex-col px-5 py-10 lg:py-5 gap-10 bg-white max-w-[640px] min-w-80 sm:min-w-[640px] lg:w-1/2 xl:w-1/3 lg:justify-between lg:min-w-[500px]">
             <div class="flex items-center justify-center gap-2">
                 <img src="{{asset('storage/logo/moon.png')}}" alt="Laracamp Logo" class="w-7">
                 <h1 class="text-lg sm:font-medium">Laracamp</h1>
             </div>
 
-            <div class="flex flex-col gap-10 sm:gap-14">
+            <div class="flex flex-col gap-10 sm:gap-14 lg:gap-10">
                 <div class="flex flex-col items-center gap-1 sm:gap-2">
                     <h2 class="text-2xl sm:text-4xl font-serif">
                         Welcome Back
