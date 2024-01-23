@@ -5,7 +5,8 @@
         "dev": "vite",
         "build": "vite build",
         "github": "git add . && git commit -m 'wip' && git push",
-        "deploy": "flyctl deploy"
+        "deploy": "flyctl deploy",
+        "gitploy": "git add . && git commit -m 'wip' && git push && flyctl deploy"
     },
     "devDependencies": {
         "autoprefixer": "^10.4.16",
