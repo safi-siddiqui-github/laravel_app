@@ -19,6 +19,7 @@ Route::prefix('auth')->name('auth.')->group(function () {
 
     Route::prefix('web')->name('web.')->controller(WebAuthController::class)->group(function () {
         Route::get('/login', 'login')->name('login');
+        Route::get('/login_guest', 'login_guest')->name('login_guest');
         Route::get('/logout', 'logout')->name('logout');
     });
 });
