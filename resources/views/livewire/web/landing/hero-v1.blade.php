@@ -1,7 +1,7 @@
 <div class="lg:p-5 xl:p-10">
-    <div class="flex flex-col lg:flex-row items-center gap-5 lg:gap-10 px-5 py-5 md:py-10 md:px-10 lg:py-10 lg:border lg:border-blue-500 lg:rounded-3xl bg-white lg:shadow-lg transition-all duration-100 ease-in-out lg:hover:shadow-xl lg:hover:border-2">
+    <div class="flex flex-col lg:flex-row items-center gap-5 lg:gap-10 p-5 md:p-10 lg:p-8 lg:border-2 lg:hover:border-blue-500 lg:rounded-3xl bg-white lg:shadow-lg transition-all duration-100 ease-in-out lg:hover:shadow-xl">
 
-        <div class="bg-blue-500 flex flex-col w-full h-full xl:max-h-[700px] items-center justify-center rounded-xl lg:rounded-3xl lg:shadow-xl md:p-10 overflow-hidden">
+        <div class="bg-blue-50 flex flex-col w-full h-full md:h-[400px] lg:h-[600px] items-center justify-center rounded-xl lg:rounded-3xl lg:shadow-xl md:p-10">
             <img src="{{asset('storage/landing/hero-security.gif')}}" alt="Hero Cloud" class="object-contain w-full h-full">
         </div>
 

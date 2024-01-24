@@ -1,5 +1,5 @@
 <div>
-    <header class="flex gap-5 py-5 px-5 md:px-10 justify-between items-center">
+    <header class="flex gap-5 py-5 px-5 md:px-10 justify-between items-center shadow">
         <nav class="flex ">
             <div class="flex items-center justify-center gap-2">
                 <img src="{{asset('storage/logo/moon.png')}}" alt="Laracamp Logo" class="w-7">
