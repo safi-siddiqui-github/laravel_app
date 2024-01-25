@@ -1,4 +1,4 @@
-<div class="">
+<div class="" id="section-two">
     <section class="p-3 md:p-5 lg:p-10 flex flex-col gap-10">
 
         <div class="flex flex-col gap-5 justify-between items-center md:py-10 md:px-5 rounded-xl md:bg-gradient-to-r from-white via-gray-100 to-blue-300">

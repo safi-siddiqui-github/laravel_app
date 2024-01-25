@@ -1,22 +1,24 @@
 <?php
 
-namespace App\Http\Controllers\Web\Auth;
+namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
-class WebAuthController extends Controller
+class WebController extends Controller
 {
     public function home()
     {
-        return view('web.pages.home');
+        return view('web.home');
     }
+
     public function login()
     {
-        return view('web.auth.login');
+        return view('web.login');
     }
+
     public function login_guest()
     {
         $user = User::where('email', 'lara-guest@gmail.com')->first();
@@ -29,6 +31,6 @@ class WebAuthController extends Controller
         Auth::logout();
         $request->session()->invalidate();
         $request->session()->regenerateToken();
-        return to_route('auth.web.login');
+        return to_route('web.login');
     }
 }

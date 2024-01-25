@@ -1,4 +1,4 @@
-<div class="lg:p-5 xl:p-10">
+<div class="lg:p-5 xl:p-10" id="hero">
     <div class="flex flex-col lg:flex-row items-center gap-5 lg:gap-10 p-5 md:p-10 lg:p-8 lg:border-2 lg:hover:border-blue-500 lg:rounded-3xl bg-white lg:shadow-lg transition-all duration-100 ease-in-out lg:hover:shadow-xl">
 
         <div class="bg-blue-50 flex flex-col w-full h-full md:h-[400px] lg:h-[600px] items-center justify-center rounded-xl lg:rounded-3xl lg:shadow-xl md:p-10">
@@ -54,7 +54,4 @@
 
         </div>
     </div>
-
-
-
 </div>

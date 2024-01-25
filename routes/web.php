@@ -1,8 +1,8 @@
 <?php
 
-use App\Http\Controllers\Web\Auth\GithubController;
-use App\Http\Controllers\Web\Auth\GoogleController;
-use App\Http\Controllers\Web\Auth\WebAuthController;
+use App\Http\Controllers\GithubController;
+use App\Http\Controllers\GoogleController;
+use App\Http\Controllers\WebController;
 use Illuminate\Support\Facades\Route;
 
 Route::prefix('auth')->name('auth.')->group(function () {
@@ -16,16 +16,13 @@ Route::prefix('auth')->name('auth.')->group(function () {
         Route::get('/redirect', 'redirect')->name('redirect');
         Route::get('/callback', 'callback');
     });
-
-    Route::prefix('web')->name('web.')->controller(WebAuthController::class)->group(function () {
-        Route::get('/login', 'login')->name('login');
-        Route::get('/login_guest', 'login_guest')->name('login_guest');
-        Route::get('/logout', 'logout')->name('logout');
-    });
 });
 
-Route::name('web.')->controller(WebAuthController::class)->group(function () {
+Route::name('web.')->controller(WebController::class)->group(function () {
     Route::get('/', 'home')->name('home');
+    Route::get('/login', 'login')->name('login');
+    Route::get('/login_guest', 'login_guest')->name('login_guest');
+    Route::get('/logout', 'logout')->name('logout');
 });
 
 Route::fallback(function () {
