@@ -19,10 +19,13 @@ Route::prefix('auth')->name('auth.')->group(function () {
 });
 
 Route::name('web.')->controller(WebController::class)->group(function () {
-    Route::get('/', 'home')->name('home');
     Route::get('/login', 'login')->name('login');
     Route::get('/login_guest', 'login_guest')->name('login_guest');
     Route::get('/logout', 'logout')->name('logout');
+    
+    Route::get('/', 'home')->name('home');
+    Route::get('/notes', 'notes')->name('notes')->middleware('auth');
+    
 });
 
 Route::fallback(function () {

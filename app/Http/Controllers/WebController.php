@@ -33,4 +33,9 @@ class WebController extends Controller
         $request->session()->regenerateToken();
         return to_route('web.login');
     }
+
+    public function notes()
+    {
+        return view('web.notes');
+    }
 }
