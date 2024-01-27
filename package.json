@@ -4,9 +4,10 @@
     "scripts": {
         "dev": "vite",
         "build": "vite build",
-        "github": "git add . && git commit -m wip && git push",
+        "push": "git add . && git commit -m wip && git push",
         "deploy": "flyctl deploy",
-        "gitploy": "git add . && git commit -m wip && git push && flyctl deploy"
+        "gitploy": "git add . && git commit -m wip && git push && flyctl deploy",
+        "migrate": "php artisan migrate:fresh --seed"
     },
     "devDependencies": {
         "autoprefixer": "^10.4.16",
