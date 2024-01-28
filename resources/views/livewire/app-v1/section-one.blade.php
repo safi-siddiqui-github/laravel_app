@@ -1,5 +1,9 @@
 <div class="p-5 md:p-10 gap-10 flex flex-col" id="section-one">
-    <h2 class="text-5xl">Laracamps Built In Apps</h2>
+
+    <div class="flex flex-col gap-1">
+        <h2 class="text-5xl">Laracamps Built In Apps</h2>
+        <p class="">Login as Guest and check our Apps</p>
+    </div>
 
     <div class="grid grid-cols-4">
 

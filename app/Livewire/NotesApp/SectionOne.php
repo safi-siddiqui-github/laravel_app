@@ -20,6 +20,8 @@ class SectionOne extends Component
     public $send_time = '';
     #[Validate('required|email')]
     public $recipient = '';
+    #[Validate('boolean')]
+    public $is_published = false;
 
     public $notes = [];
     public $is_updating = false;
@@ -43,6 +45,7 @@ class SectionOne extends Component
         $note->send_date = $this->send_date;
         $note->send_time = $this->send_time;
         $note->recipient = $this->recipient;
+        $note->is_published = $this->is_published;
         $note->save();
 
         $this->reset();
@@ -57,10 +60,12 @@ class SectionOne extends Component
         $this->send_date = Carbon::parse($note->send_date)->format('Y-m-d');
         $this->send_time = Carbon::parse($note->send_time)->format('H:i');
         $this->recipient = $note->recipient;
+        $this->is_published = $note->is_published;
     }
 
     public function update(Note $note)
     {
+        $this->authorize('update', $note);
         $this->validate();
 
         $note->title = $this->title;
@@ -68,6 +73,7 @@ class SectionOne extends Component
         $note->send_date = $this->send_date;
         $note->send_time = $this->send_time;
         $note->recipient = $this->recipient;
+        $note->is_published = $this->is_published;
         $note->update();
 
         $this->reset();
@@ -76,6 +82,7 @@ class SectionOne extends Component
 
     public function delete(Note $note)
     {
+        $this->authorize('delete', $note);
         $note->delete();
         $this->mount();
     }

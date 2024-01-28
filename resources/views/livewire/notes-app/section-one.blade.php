@@ -38,9 +38,17 @@
                             <button class="w-6" wire:click="delete('{{$note->id}}')">
                                 <img src="{{asset('storage/icons/delete.svg')}}" alt="delete" class="object-contain">
                             </button>
+
                             <button class="w-6" wire:click="set_update('{{$note->id}}')">
                                 <img src="{{asset('storage/icons/edit.svg')}}" alt="edit" class="object-contain">
                             </button>
+
+                            @if($note->is_published)
+                            <button class="w-6">
+                                <img src="{{asset('storage/icons/publish.svg')}}" alt="publish" class="object-contain">
+                            </button>
+                            @endif
+
                         </div>
                     </div>
 
@@ -53,9 +61,9 @@
                 </div>
                 @empty
 
-                    <div class="border flex justify-center rounded-xl py-5">
-                        <p class="text-xl text-slate-400 italic">No Notes. Add some!</p>
-                    </div>
+                <div class="border flex justify-center rounded-xl py-5">
+                    <p class="text-xl text-slate-400 italic">No Notes. Add some!</p>
+                </div>
                 @endforelse
 
             </div>
@@ -101,6 +109,14 @@
                     @enderror
                     <input type="time" wire:model="send_time" id="send_time" class="border rounded w-96 px-3 py-2">
                     @error('send_time')
+                    <span class="text-red-500 text-sm">{{$message}}</span>
+                    @enderror
+                </div>
+
+                <div class="flex justify-start items-center gap-2">
+                    <label for="is_published" class="font-medium">Publish</label>
+                    <input type="checkbox" wire:model="is_published" id="is_published" class="border rounded h-4 w-4 accent-black">
+                    @error('is_published')
                     <span class="text-red-500 text-sm">{{$message}}</span>
                     @enderror
                 </div>
