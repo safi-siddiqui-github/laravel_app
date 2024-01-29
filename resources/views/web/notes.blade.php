@@ -11,11 +11,14 @@
 
 <body class="antialiased">
 
+{{-- 
+    
     <livewire:notes-app.header />
     <main class="flex flex-col mb-20">
         <livewire:notes-app.section-one />
     </main>
-
+    
+    --}}
 </body>
 
 </html>
