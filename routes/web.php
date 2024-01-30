@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AuthController;
 use App\Http\Controllers\GithubController;
 use App\Http\Controllers\GoogleController;
 use App\Http\Controllers\NoteController;
@@ -7,12 +8,7 @@ use App\Http\Controllers\WebController;
 use Illuminate\Support\Facades\Route;
 
 Route::name('web.')->controller(WebController::class)->group(function () {
-    Route::get('/login', 'login')->name('login');
-    Route::get('/login_guest', 'login_guest')->name('login_guest');
-    Route::get('/logout', 'logout')->name('logout');
-
     Route::get('/', 'home')->name('home');
-    // Route::get('/notes', 'notes')->name('notes')->middleware('auth');
 });
 
 Route::prefix('auth')->name('auth.')->group(function () {
@@ -26,12 +22,17 @@ Route::prefix('auth')->name('auth.')->group(function () {
         Route::get('/redirect', 'redirect')->name('redirect');
         Route::get('/callback', 'callback');
     });
+    
+    Route::controller(AuthController::class)->group(function () {
+        Route::get('/login', 'login')->name('login');
+        Route::post('/login_post', 'login_post')->name('login_post');
+        Route::post('/logout', 'logout')->name('logout');
+    });
 });
 
 Route::prefix('note')->name('note.')->controller(NoteController::class)->group(function () {
     Route::get('/', 'index')->name('index');
 });
-
 
 Route::fallback(function () {
     return to_route('web.home');

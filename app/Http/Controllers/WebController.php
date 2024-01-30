@@ -14,30 +14,4 @@ class WebController extends Controller
     {
         return Inertia::render('Home');
     }
-    
-    public function login()
-    {
-        return Inertia::render('Login');
-        // return view('web.login');
-    }
-
-    public function login_guest()
-    {
-        $user = User::where('email', 'lara-guest@gmail.com')->first();
-        Auth::login($user);
-        return to_route('web.home');
-    }
-
-    public function logout(Request $request)
-    {
-        Auth::logout();
-        $request->session()->invalidate();
-        $request->session()->regenerateToken();
-        return to_route('web.login');
-    }
-
-    public function notes()
-    {
-        return view('web.notes');
-    }
 }
