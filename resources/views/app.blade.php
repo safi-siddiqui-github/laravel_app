@@ -12,6 +12,7 @@
 
 <body class="antialiased">
     @inertia
+    <div id="modal"></div>
 </body>
 
 </html>
